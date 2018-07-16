@@ -409,8 +409,8 @@ contract FreezableToken is StandardToken, Ownable {
  * @title NeriToken
  */
 contract NeriToken is FreezableToken, PausableToken, BurnableToken {
-    string public constant name = "Neritoken";
-    string public constant symbol = "NERI";
+    string public constant name = "LTREE";
+    string public constant symbol = "LTREE";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 100 ether; //To change
@@ -418,7 +418,7 @@ contract NeriToken is FreezableToken, PausableToken, BurnableToken {
     /**
      * @dev Constructor that gives msg.sender all of existing tokens.
      */
-    function NeriToken() public {
+    function LTREE() public {
         totalSupply_ = INITIAL_SUPPLY;
         balances[msg.sender] = totalSupply_;
         Transfer(0x0, msg.sender, totalSupply_);
@@ -427,19 +427,19 @@ contract NeriToken is FreezableToken, PausableToken, BurnableToken {
 
 
 /**
- * @title NeriSmartContract Smart Contract
+ * @title LTREESmartContract Smart Contract
  */
-contract NeriSmartContract is Ownable {
+contract LTREESmartContract is Ownable {
 
     using SafeMath for uint256;
 
-    NeriToken public token; // The token being sold
+    LTREEToken public token; // The token being sold
 
     address[] addresses;
 
     function NeriSmartContract(address _contractAddress) Ownable() public {
         require(_contractAddress != 0x0);
-        token = NeriToken(_contractAddress);
+        token = LTREE(_contractAddress);
         token.addDistributionContract(this);
     }
 
