@@ -406,9 +406,9 @@ contract FreezableToken is StandardToken, Ownable {
 
 
 /**
- * @title NeriToken
+ * @title LTREE
  */
-contract NeriToken is FreezableToken, PausableToken, BurnableToken {
+contract LTREE is FreezableToken, PausableToken, BurnableToken {
     string public constant name = "LTREE";
     string public constant symbol = "LTR";
     uint8 public constant decimals = 18;
@@ -418,7 +418,7 @@ contract NeriToken is FreezableToken, PausableToken, BurnableToken {
     /**
      * @dev Constructor that gives msg.sender all of existing tokens.
      */
-    function NeriToken() public {
+    function LTREE() public {
         totalSupply_ = INITIAL_SUPPLY;
         balances[msg.sender] = totalSupply_;
         Transfer(0x0, msg.sender, totalSupply_);
